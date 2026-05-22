@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Dashboard Financeiro</title>
+</head>
+<body class="bg-[#f0f0f0]">
+    <main class="h-screen p-12 px-24">
+        <h1 class="text-4xl mb-6">Dashboard Financeiro</h1>
+        <section class="flex justify-between">
+        <div class="bg-white rounded-2xl p-8 w-1/4">
+            <h2 class="text-xl font-bold">Saldo</h2>
+            <span class="font-bold text-2xl text-blue-600">R$ 0,00</span>
+        </div>
+        <div class="bg-white rounded-2xl p-8 w-1/4">
+            <h2 class="text-xl font-bold">Entradas</h2>
+            <span class="font-bold text-2xl text-green-400">R$ 0,00</span>
+        </div>
+        <div class="bg-white rounded-2xl p-8 w-1/4">
+            <h2 class="text-xl font-bold">Saídas</h2>
+            <span class="font-bold text-2xl text-red-600">R$ 0,00</span>
+        </div>
+        </section>
+        <section class="bg-white rounded-2xl p-8 mt-10">
+            <form onsubmit="adicionarTransacao(event)">
+                <label for="desc" class="text-lg">Nova Transação</label>
+                <input type="text" id="desc" class="bg-[#f0f0f0] rounded-lg p-2 mx-6">
+                <label for="valor" class="text-lg">Valor</label>
+                <input type="number" name="valor" id="valor" class="bg-[#f0f0f0] rounded-lg p-2 mx-6">
+                <select name="tipo" id="tipo" class="p-2 w-30 border rounded-lg mr-50">
+                    <option value="entrada">Entrada</option>
+                    <option value="saida">Saída</option>
+                </select>
+                <button type="submit" class="bg-blue-700 px-10 py-2 rounded-lg text-white hover:bg-blue-800 cursor-pointer hover:scale-105 duration-1000">Adicionar</button>
+            </form>
+        </section>
+        <section>
+            <h2>Transações</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th><data value=""></data></th>
+                        <th>Descrição</th>
+                        <th>Tipo de Transação</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+    <script src="scripts/dashboard.js"></script>
+</body>
+</html>
