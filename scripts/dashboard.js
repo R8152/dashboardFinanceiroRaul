@@ -1,5 +1,5 @@
 let transacoes = []
-const dados = document.getElementById('dados')
+const dados = document.getElementById('dados') //.getElementById(): Retorna uma referência a um objeto com o valor especificado de um atributo ID
 const cardEntradas = document.getElementById('entradas')
 const cardSaidas = document.getElementById('saidas')
 const cardSaldo = document.getElementById('saldo')
@@ -22,10 +22,10 @@ function adicionarTransacao(event){
     
 
     const transacao = {
-        data:new Date().toLocaleDateString('pt-br'),
+        data:new Date().toLocaleDateString('pt-br'), //toLocaleDateString(): Converte a data atual para string
         desc,
         tipo,
-        valor,
+        valor
     }
 
     console.log(transacao)
@@ -34,14 +34,16 @@ function adicionarTransacao(event){
 
     dados.innerHTML = `${transacoes.map((item, index) => (
         `<tr key=${index}>
-            <td class="px-6 py-4 whitespace-nowrap">${item.data}</td>
-            <td class="px-6 py-4 whitespace-nowrap">${item.desc}</td>
-            <td class="px-6 py-4 whitespace-nowrap">${item.tipo}</td>
-            <td class="px-6 py-4 whitespace-nowrap">${item.valor}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-center">${item.desc}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-center">${item.data}</td>
+            <td class="${item.tipo === 'Entrada' ? "text-blue-500 font-bold " : "text-red-500 font-bold "}px-6 py-4 whitespace-nowrap text-center">${item.tipo}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-center">${item.valor}</td>
         </tr>
             `
     )
-    )}`
+    ).join("")}`
+
+    renderizarTabela()
 }
 
 function calcularTotais(){
@@ -52,6 +54,7 @@ function calcularTotais(){
         transacao.tipo === "saida"
     )).reduce((acumulador, transacao) => (acumulador + transacao.valor ), 0)
     const saldo = entradas - saidas
+    console.log(saldo)
 
     cardSaldo.innerHTML = `R$ ${saldo.toFixed(2)}`
     cardEntradas.innerHTML = `R$ ${entradas.toFixed(2)}`

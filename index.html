@@ -7,7 +7,7 @@
     <title>Dashboard Financeiro</title>
 </head>
 <body class="bg-[#f0f0f0]">
-    <main class="h-screen p-12 px-24">
+    <main class="h-screen p-12 px-24 font-[Futura]">
         <h1 class="text-4xl mb-6">Dashboard Financeiro</h1>
         <section class="flex justify-between">
         <div class="bg-white rounded-2xl p-8 w-1/4">
@@ -16,11 +16,11 @@
         </div>
         <div class="bg-white rounded-2xl p-8 w-1/4">
             <h2 class="text-xl font-bold">Entradas</h2>
-            <span  id="entradas" class="font-bold text-2xl text-green-400">R$ 0,00</span>
+            <span id="entradas" class="font-bold text-2xl text-green-400">R$ 0,00</span>
         </div>
         <div class="bg-white rounded-2xl p-8 w-1/4">
             <h2 class="text-xl font-bold">Saídas</h2>
-            <span  id="saidas" class="font-bold text-2xl text-red-600">R$ 0,00</span>
+            <span id="saidas" class="font-bold text-2xl text-red-600">R$ 0,00</span>
         </div>
         </section>
         <section class="bg-white rounded-2xl p-8 mt-10">
@@ -31,7 +31,7 @@
                 <input type="number" name="valor" id="valor" class="bg-[#f0f0f0] rounded-lg p-2 mx-6">
                 <select name="tipo" id="tipo" class="p-2 w-30 border rounded-lg mr-50">
                     <option value="Entrada">Entrada</option>
-                    <option value="Saida">Saída</option>
+                    <option value="Saída">Saída</option>
                 </select>
                 <button type="submit" class="bg-blue-700 px-10 py-2 rounded-lg text-white hover:bg-blue-800 cursor-pointer hover:scale-105 duration-1000">Adicionar</button>
             </form>
@@ -41,10 +41,10 @@
            <table class="w-full table-auto text-sm text-left">
             <thead class="bg-gray-50 text-gray-600 font-medium border-b">
                 <tr>
-                    <th class="py-4 px-6 whitespace-nowrap">Descrição</th>
-                    <th class="py-4 px-6 whitespace-nowrap">Data</th>
-                    <th class="py-4 px-6 whitespace-nowrap">Tipo de Transação</th>
-                    <th class="py-4 px-6 whitespace-nowrap">Valor</th>
+                    <th class="py-4 px-6 whitespace-nowrap text-center">Descrição</th>
+                    <th class="py-4 px-6 whitespace-nowrap text-center">Data</th>
+                    <th class="py-4 px-6 whitespace-nowrap text-center">Tipo de Transação</th>
+                    <th class="py-4 px-6 whitespace-nowrap text-center">Valor</th>
                 </tr>
             </thead>
                 <tbody id="dados" class="text-gray-600 divide-y"></tbody>
