@@ -36,7 +36,7 @@ function adicionarTransacao(event){
         `<tr key=${index}>
             <td class="px-6 py-4 whitespace-nowrap text-center">${item.desc}</td>
             <td class="px-6 py-4 whitespace-nowrap text-center">${item.data}</td>
-            <td class="${item.tipo === 'Entrada' ? "text-blue-500 font-bold " : "text-red-500 font-bold "}px-6 py-4 whitespace-nowrap text-center">${item.tipo}</td>
+            <td class="${item.tipo === 'Entrada' ? "text-green-700 font-bold " : "text-red-500 font-bold "}px-6 py-4 whitespace-nowrap text-center">${item.tipo}</td>
             <td class="px-6 py-4 whitespace-nowrap text-center">${item.valor}</td>
         </tr>
             `
@@ -56,9 +56,9 @@ function calcularTotais(){
     const saldo = entradas - saidas
     console.log(saldo)
 
-    cardSaldo.innerHTML = `R$ ${saldo.toFixed(2)}`
-    cardEntradas.innerHTML = `R$ ${entradas.toFixed(2)}`
-    cardSaidas.innerHTML = `R$ ${saidas.toFixed(2)}`
+    cardSaldo.textContent = `R$ ${saldo.toFixed(2)}`
+    cardEntradas.textContent = `R$ ${entradas.toFixed(2)}`
+    cardSaidas.textContent = `R$ ${saidas.toFixed(2)}`
     console.log('entradas:', entradas)
     console.log('saidas:', saidas)
 }
