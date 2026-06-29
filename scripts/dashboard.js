@@ -1,8 +1,8 @@
 let transacoes = []
-const dados = document.getElementById('dados') //.getElementById(): Retorna uma referência a um objeto com o valor especificado de um atributo ID
-const cardEntradas = document.getElementById('entradas')
-const cardSaidas = document.getElementById('saidas')
-const cardSaldo = document.getElementById('saldo')
+const dados = document.getElementById("dados") //.getElementById(): Retorna uma referência a um objeto com o valor especificado de um atributo ID
+const cardEntradas = document.getElementById("entradas")
+const cardSaidas = document.getElementById("saidas")
+const cardSaldo = document.getElementById("saldo")
 function renderizarTabela(){
     if (transacoes.length === 0){
         dados.innerHTML = `
@@ -48,10 +48,10 @@ function adicionarTransacao(event){
 
 function calcularTotais(){
     const entradas = transacoes.filter((transacao)=>(
-        transacao.tipo === "entrada"
+        transacao.tipo === "Entrada"
     )).reduce((acumulador, transacao) => (acumulador + transacao.valor ), 0)
     const saidas = transacoes.filter((transacao)=>(
-        transacao.tipo === "saida"
+        transacao.tipo === "Saída"
     )).reduce((acumulador, transacao) => (acumulador + transacao.valor ), 0)
     const saldo = entradas - saidas
     console.log(saldo)
