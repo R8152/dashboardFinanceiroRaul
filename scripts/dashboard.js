@@ -36,7 +36,7 @@ function adicionarTransacao(event){
         `<tr key=${index}>
             <td class="px-6 py-4 whitespace-nowrap text-center">${item.desc}</td>
             <td class="px-6 py-4 whitespace-nowrap text-center">${item.data}</td>
-            <td class="${item.tipo === 'Entrada' ? "text-green-700 font-bold " : "text-red-500 font-bold "}px-6 py-4 whitespace-nowrap text-center">${item.tipo}</td>
+            <td class="${item.tipo === 'Entrada' ? "text-blue-500 font-bold " : "text-red-500 font-bold "}px-6 py-4 whitespace-nowrap text-center">${item.tipo}</td>
             <td class="px-6 py-4 whitespace-nowrap text-center">${item.valor}</td>
         </tr>
             `
